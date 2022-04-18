@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  TOKEN: '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',
 };
 
 /*
@@ -14,3 +15,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+// User access token
