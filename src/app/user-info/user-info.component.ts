@@ -11,12 +11,14 @@ import { ApiService } from '../services/api.service';
 export class UserInfoComponent implements OnInit {
   user: User = []
 
-  constructor(private ApiService: ApiService) { }
-
-  ngOnInit(): void {
+  constructor(private ApiService: ApiService) { 
     this.ApiService.getInformation().subscribe(
       data => console.log(data)
       )
+  }
+
+  ngOnInit(): void {
+    
   }
 
 }
