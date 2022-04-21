@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { DateCountPipe } from './date-count.pipe';
 import { FeaturingDirective } from './featuring.directive';
+import { GithubRepoComponent } from './user-info/github-repo/github-repo.component';
+import { GithubUserComponent } from './user-info/github-user/github-user.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { FeaturingDirective } from './featuring.directive';
     UserInfoComponent,
     DateCountPipe,
     FeaturingDirective,
+    GithubRepoComponent,
+    GithubUserComponent,
   ],
   imports: [
     BrowserModule,
