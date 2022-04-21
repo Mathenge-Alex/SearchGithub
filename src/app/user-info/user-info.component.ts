@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 export class UserInfoComponent implements OnInit {
   title = "search on Github"
 
-  constructor(private ApiService: ApiService) { 
+  constructor(public ApiService: ApiService) { 
     this.title = "search on Github"
   }
 

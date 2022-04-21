@@ -19,6 +19,7 @@ const httpPath = {
 })
 export class ApiService {
   user!: User;
+  repos: any = []
   repository!: Repository;
   BASE_URL = "https://api.github.com/users/"
 
@@ -51,7 +52,7 @@ export class ApiService {
       this.http.get(`${this.BASE_URL}${keyword}/repositories`, httpPath).subscribe({
         next: (data: any)=>{
           console.log(data)
-          this.repository = data;
+          this.repos = data;
           resolve;
         },
         error: (err: any)=> {
