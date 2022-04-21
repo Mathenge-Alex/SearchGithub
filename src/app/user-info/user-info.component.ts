@@ -9,16 +9,20 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-  user: User = []
+  title = "search on Github"
 
   constructor(private ApiService: ApiService) { 
-    this.ApiService.getInformation().subscribe(
-      data => console.log(data)
-      )
+    this.title = "search on Github"
   }
 
   ngOnInit(): void {
-    
+    this.ApiService.getUser('Mathenge-Alex')
+    this.ApiService.viewSummary('Mathenge-Alex')
+  
+  }
+  SearchUser(keyword:string) {
+    this.ApiService.viewSummary(keyword)
+    this.ApiService.getUser(keyword)
   }
 
 }

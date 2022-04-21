@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   token: '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',
-  request_URL: "https://api.github.com/users/"
 };
 
 /*
