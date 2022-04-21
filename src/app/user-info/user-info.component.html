@@ -12,35 +12,7 @@
 
 
 
-<div class="container">
-    <div class="row infor">
 
-        <!-- User info to display on the left -->
-        <div class="col-md-4 text-center">
-            <div>
-                <img class="img-fluid rounded-circle" src="{{ ApiService.user.avatar_url }}" alt="Alex">
-            </div>
-            <div>
-            <h3>{{ ApiService.user.name }}</h3>
-            <p><a href="{{ ApiService.user.html_url }}" target="_blank">{{ ApiService.repository.login }}</a></p>
-            <p>{{ ApiService.user.bio }}</p>
-            <p>{{ ApiService.user.followers }} <em>Followers,  Following {{ApiService.user.following}}</em></p>
-            </div>
-        </div>
 
-        <!-- Repositories to display on the right -->
-        <div class="col-md-5">
-            <div class="row">
-                <h2>Repositories</h2>
-                <p>The user has {{ ApiService.repository.public_repos }}</p>
-                <div *ngFor="let repo of ApiService.repos" class="col-md-5 m-1" style="word-wrap: break-word;">
-                    <h4><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h4>
-                    <p>{{ ApiService.repository.description }}</p>
-                    <p>Languages {{ApiService.repository.language}} </p>
-                    <p class="text-secondary">{{ repo.topics }}</p>
-                    <p><em>Created: {{ ApiService.repository.created_at | date }}</em></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+      

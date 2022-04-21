@@ -15,15 +15,19 @@ export class GithubRepoComponent implements OnInit {
 
   uName = new FormControl('',Validators.required)
 
-    constructor( private ApiService :ApiService ) {}
-    viewSummary(ownerName:string):void{
+    constructor( public ApiService :ApiService ) {}
+
+
+  viewSummary(ownerName:string):void{
     this.ApiService.getUser(ownerName).then((repos:any)=>{
-      this.repos = repos
-    })
-    }
+    this.repos = repos
+  })
+  }
+
+
   searchRepos(){
     let ownerName = this.uName.value
-  this.viewSummary(ownerName)
+    this.viewSummary(ownerName)
 
     return false
     
