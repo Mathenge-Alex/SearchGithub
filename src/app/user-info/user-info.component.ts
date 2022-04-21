@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { info } from 'console';
 import { User } from '../classes/user';
+import { Repository } from '../classes/repository';
 import { ApiService } from '../services/api.service';
 
 @Component({

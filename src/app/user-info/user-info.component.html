@@ -26,11 +26,13 @@
         <div class="col-md-5">
             <div class="row">
                 <h2>Repositories</h2>
+                <p>The user has {{ ApiService.repository.public_repos }}</p>
                 <div *ngFor="let repo of ApiService.repos" class="col-md-5 m-1" style="word-wrap: break-word;">
                     <h4><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h4>
-                    <p>{{ repo.description }}</p>
+                    <p>{{ ApiService.repository.description }}</p>
+                    <p>Languages {{ApiService.repository.language}} </p>
                     <p class="text-secondary">{{ repo.topics }}</p>
-                    <p><em>Created: {{ repo.created_at | date }}</em></p>
+                    <p><em>Created: {{ ApiService.repository.created_at | date }}</em></p>
                 </div>
             </div>
         </div>
