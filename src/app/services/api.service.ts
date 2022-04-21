@@ -24,10 +24,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-
-  search(keyword: string) {
+    // Get github User
+  getUser(keyword: string){
     let promise = new Promise<void>((resolve, reject)=>{
-      this.http.get(`${this.BASE_URL}${keyword}/repositories`, httpPath).subscribe({
+      this.http.get(`${this.BASE_URL}${keyword}`, httpPath).subscribe({
         next: (data: any)=>{
           console.log(data)
           this.user = data;
@@ -44,14 +44,25 @@ export class ApiService {
     return promise
   }
 
-  getUser(keyword: string){
 
+  //  Get github Repository data
+  viewSummary(keyword: string) {
+    let promise = new Promise<void>((resolve, reject)=>{
+      this.http.get(`${this.BASE_URL}${keyword}/repositories`, httpPath).subscribe({
+        next: (data: any)=>{
+          console.log(data)
+          this.repository = data;
+          resolve;
+        },
+        error: (err: any)=> {
+          reject(err);
+        },
+        complete: () => {
+          console.log("Successfully completed")
+        }
+      });
+    });
+    return promise
   }
 
-
-  viewSummary(keyword: string){
-
-  }
-
-
-  }
+}
