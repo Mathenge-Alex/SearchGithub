@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 const httpPath = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'access_token:' + environment.token
+    // Authorization: 'access_token:' + environment.token
   })
 };
 
