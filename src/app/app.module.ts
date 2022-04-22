@@ -10,6 +10,7 @@ import { DateCountPipe } from './date-count.pipe';
 import { FeaturingDirective } from './featuring.directive';
 import { GithubRepoComponent } from './user-info/github-repo/github-repo.component';
 import { GithubUserComponent } from './user-info/github-user/github-user.component';
+import { FormNavigtionDirective } from './form-navigtion.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { GithubUserComponent } from './user-info/github-user/github-user.compone
     FeaturingDirective,
     GithubRepoComponent,
     GithubUserComponent,
+    FormNavigtionDirective,
   ],
   imports: [
     BrowserModule,

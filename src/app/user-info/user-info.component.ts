@@ -17,13 +17,13 @@ export class UserInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ApiService.getUser('Mathenge-Alex');
+    this.ApiService.findUser('Mathenge-Alex');
     this.ApiService.searchRepo('Mathenge-Alex');
   
   }
   SearchUser(keyword:string) {
     this.ApiService.searchRepo(keyword);
-    this.ApiService.getUser(keyword);
+    this.ApiService.findUser(keyword);
   }
 
 }

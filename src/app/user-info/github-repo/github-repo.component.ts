@@ -19,7 +19,7 @@ export class GithubRepoComponent implements OnInit {
 
 
   viewSummary(ownerName:string):void{
-    this.ApiService.getUser(ownerName).then((repos:any)=>{
+    this.ApiService.findUser(ownerName).then((repos:any)=>{
     this.repos = repos
   })
   }

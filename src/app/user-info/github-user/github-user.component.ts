@@ -19,7 +19,7 @@ export class GithubUserComponent implements OnInit {
     constructor( public ApiService :ApiService ) {}
 
   getUser(ownerName: string):void{
-  this.ApiService.getUser(ownerName).then ((users:any)=>{
+  this.ApiService.findUser(ownerName).then ((users:any)=>{
 
   this.user = new User(this.user.avatar_url, this.user.name, this.user.html_url, this.user.bio, this.user.login, this.user.following, this.user.followers, )
   console.log(this.user)
