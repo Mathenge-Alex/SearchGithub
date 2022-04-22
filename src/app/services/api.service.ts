@@ -21,7 +21,7 @@ export class ApiService {
   // user!: User;
   // repos: any = []
   // repository!: Repository;
-  // BASE_URL = "https://api.github.com/users/"
+  BASE_URL = "https://api.github.com/users/"
 
   constructor(private http: HttpClient) { }
 
@@ -47,7 +47,7 @@ export class ApiService {
 
   getUser(username:string):any{
     const promise = new Promise((resolve,reject)=>{
-    resolve( this.http.get(`https://api.github.com/users/${username}`).toPromise())
+    resolve( this.http.get(`${this.BASE_URL}${username}`).toPromise())
   }) 
   return promise
 
