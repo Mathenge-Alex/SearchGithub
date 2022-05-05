@@ -26,7 +26,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
     // Get github User
-  findUser(keyword: string){
+  findUser(keyword: string): any {
     const promise = new Promise((resolve, reject)=>{
       this.http.get(`${this.BASE_URL}${keyword}`, httpPath).subscribe({
         next: (data: any)=>{
@@ -56,7 +56,7 @@ export class ApiService {
 
 
   //  Get github Repository data
-  searchRepo(keyword: string) {
+  searchRepo(keyword: string):any {
     const promise = new Promise((resolve, reject)=>{
       this.http.get(`${this.BASE_URL}${keyword}/repositories`, httpPath).subscribe({
         next: (data: any)=>{
