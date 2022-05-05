@@ -1,0 +1,68 @@
+<div class="container mt-1">
+
+  <!-- Search User and repos Collapse Functionality -->
+<div class=" my-2 mb-4 text-center ">
+  <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Search From Github
+  </a>
+</div>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body m-auto" style="width: 40%; text-align: center;">
+    <a class="btn btn-sm btn-outline-info py-2"routerLink="/user">User</a>
+    <a class="btn btn-sm btn-outline-info my-1 btn-outline-info"routerLink="/repository">Repositories</a>
+  </div>
+</div>
+
+<!-- End of search -->
+  
+  <form class="form" (ngSubmit) ='searchRepo()' #repoForm='ngForm'>
+
+    
+    <div class="formgroup">
+        <input class="form-control my-2" type="search" name="search" ngModel #search='ngModel'placeholder="Search By Github Username" aria-label="Search" required><br>
+        
+        <div [hidden]="search.valid || search.pristine" class="alert alert-danger">
+            <p>Enter Github User Name</p>
+          </div>
+        
+    </div>
+    <button class="btn btn-outline-success" id="submit" type="submit">Search</button>
+  
+  </form>
+  <div class="container"  >
+    <div class="row">
+      <!-- <div class="col-md-12">
+        <div class="card card-repo mt-3"  *ngFor ="let repos of repoFound" id="cardrepo" appColors> -->
+          <div class="row my-repository">
+            <!-- <div class="col-md-12 text-center m-1">
+              <h2 class="my-3 text-center mx-auto">User Repositories</h2>
+            </div> -->
+            <div class="col-md-3" *ngFor="let repos of repoFound" id="cardrepo" appColors>
+              <div class="card card-repo my-2" style="height: 20rem;">
+                
+                <div class="card-body text-center">
+                  <h5 class="card-title heading"> {{ repos.name }} </h5>
+                  <p class="card-text mt-1" style="height: 8rem; overflow: hidden;">{{ repos.description}}</p>
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{repos.created_at | date }}</span></strong> </p>
+                  <a href="{{ repos.html_url }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+    
+</div>
+<div class="row homepage" *ngIf="!showFound && GithubUserNotFound">
+  <div class="col-md-4 mt-4">
+    <div class="card">
+      <div class="alert alert-danger bg-light" role="alert">Github user is invalid! Please type a valid Github User Name</div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+</div>
