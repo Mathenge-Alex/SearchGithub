@@ -1,0 +1,18 @@
+.container{
+    height: 50vh;
+}
+.formgroup{
+    margin: 0 auto;
+    width: 30%;
+    display: flex;
+}
+#submit{
+    margin: 0 auto;
+    width: 15%;
+}
+.form{
+    display: flex;
+}
+.alert-danger{
+    margin: 0 auto;
+}

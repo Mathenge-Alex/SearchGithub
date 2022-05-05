@@ -1,0 +1,21 @@
+.page{
+    height: 100vh;
+}
+.user-info{
+    height: 10rem;
+}
+.user-info img{
+    height: 20%;
+}
+.formgroup{
+    margin: 0 auto;
+    width: 35%;
+    display: flex;
+}
+#submit{
+    margin: 0 auto;
+    width: 15%;
+}
+.contents{
+    height: 70vh;
+}
