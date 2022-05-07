@@ -31,13 +31,10 @@
   </form>
   <div class="container"  >
     <div class="row">
-      <!-- <div class="col-md-12">
-        <div class="card card-repo mt-3"  *ngFor ="let repos of repoFound" id="cardrepo" appColors> -->
+      
           <div class="row my-repository">
-            <!-- <div class="col-md-12 text-center m-1">
-              <h2 class="my-3 text-center mx-auto">User Repositories</h2>
-            </div> -->
-            <div class="col-md-3" *ngFor="let repos of repoFound" id="cardrepo" appColors>
+            
+            <div class="col-md-3" *ngFor="let repos of repoFound" id="cardrepo">
               <div class="card card-repo my-2" style="height: 20rem;">
                 
                 <div class="card-body text-center">
@@ -45,8 +42,8 @@
                   <p class="card-text mt-1" style="height: 8rem; overflow: hidden;">{{ repos.description}}</p>
                 </div>
                 <div class="card-body text-center">
-                  <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{repos.created_at | date }}</span></strong> </p>
-                  <a href="{{ repos.html_url }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
+                  <p class="card-text">Date Published: <span class="">{{repos.created_at | date }}</span> </p>
+                  <a href="{{ repos.html_url }}" target="_blank" class="card-link color-primary">Open<i class="fa fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>

@@ -17,11 +17,11 @@
   <!-- End of search -->
   
   <div class="row">
-    <div class="card col-md-5 mt-5"appColors >
-        <img [src]="userInfo?.avatar_url" style="height: fit-content; padding: 2rem;" class="card-img-top" alt="My profile picture">
+    <div class="card col-md-5 mt-5"> 
+      <img [src]="userInfo?.avatar_url" style="height: fit-content; padding: 2rem;" class="card-img-top" alt="My profile picture">
     </div>
 
-    <div class="card-body text-center col-md-5 my-5">
+    <div class="card-body text-center col-md-5 my-5"appColors> <!-- Applied Color Directive on User Info -->
       <h4 class="card-text my-4 "><i style="font-weight: 100;">Name : </i><b> {{ userInfo?.name }} </b></h4>
       <p class="my-5" >Github User-Name : - <i><b>{{ userInfo?.login }}</b></i></p>
       <p class="my-5" >About : -  {{ userInfo?.bio }}</p>
@@ -34,20 +34,20 @@
     </div>
   </div>
     <div class="row ">
-        <div class="row my-repository"appColors>
+        <div class="row my-repository">
             <div class="col-md-12 text-center m-1">
               <h2 class="my-3 text-center mx-auto">My repositories</h2>
             </div>
             <div class="col-md-3" *ngFor="let repository of userRepositories; let i = index">
-              <div class="card card-repo my-2" style="height: 20rem;">
+              <div class="card card-repo my-2" style="height: 20rem; background:rgb(224, 220, 220);">
                 
                 <div class="card-body text-center">
                   <h5 class="card-title heading"> {{ repository.name }} </h5>
                   <p class="card-text mt-1" style="height: 8rem; overflow: hidden;">{{ repository.description}}</p>
                 </div>
                 <div class="card-body text-center">
-                  <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{repository.created_at | date }}</span></strong> </p>
-                  <a href="{{ repository.html_url }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
+                  <p class="card-text">Date Published: <span class="">{{repository.created_at | date }}</span></p>
+                  <a href="{{ repository.html_url }}" target="_blank" class="card-link color-primary">Open <i class="fa fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
